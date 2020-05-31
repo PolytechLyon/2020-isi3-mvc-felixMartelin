@@ -1,6 +1,6 @@
 # ISI3 - MVP design pattern - "Game of Life"
 
-> Le rapport est à fournir dans ce document sous chacune des questions. 
+> Le rapport est à fournir dans ce document sous chacune des questions.
 > **Ne restez pas bloqués bêtement, demander de l'aide**
 > Ne copier pas le code de votre voisin, ça se voit.
 
@@ -17,8 +17,8 @@ Il est inventé par [John Horton Conway](https://fr.wikipedia.org/wiki/John_Hort
 
 ## Avant-propos
 
-1. Expliquer le design pattern MVC à l'aide d'un schéma à insérer directement ici. 
-Utiliser un outils commde Dia pour le représenter. Je veux **votre** schéma, pas un de ceux qu'on peut trouver sur le net.
+1. Expliquer le design pattern MVC à l'aide d'un schéma à insérer directement ici.
+   Utiliser un outils commde Dia pour le représenter. Je veux **votre** schéma, pas un de ceux qu'on peut trouver sur le net.
 
 2. Expliquer ce pattern à l'aide en complétant ce texte.
 

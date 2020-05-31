@@ -4,6 +4,7 @@ import {
   DEFAULT_ALIVE_PAIRS,
   RENDER_INTERVAL
 } from "./constants";
+import { initView, drawGame } from "./view";
 
 export class Model {
   constructor() {
@@ -20,19 +21,36 @@ export class Model {
       this.state[y][x] = CELL_STATES.ALIVE;
     });
     this.updated();
+    initView();
   }
 
   run(date = new Date().getTime()) {
     this.raf = requestAnimationFrame(() => {
       const currentTime = new Date().getTime();
       if (currentTime - date > RENDER_INTERVAL) {
-
+        let tampon = Array.from(new Array(this.height), () =>
+          Array.from(new Array(this.width), () => CELL_STATES.NONE)
+        );
         for (let i = 0; i < this.width; i++) {
           for (let j = 0; j < this.width; j++) {
-            const nbAlive = this.aliveNeighbours(i, j);
-            // TODO implement Game of life logic
+            tampon[i][j] = this.state[i][j];
           }
         }
+        for (let k = 0; k < this.width; k++) {
+          for (let l = 0; l < this.width; l++) {
+            const nbAlive = this.aliveNeighbours(k, l);
+            if (
+              (nbAlive < 2 || nbAlive > 3) &&
+              tampon[k][l] === CELL_STATES.ALIVE
+            ) {
+              tampon[k][l] = CELL_STATES.DEAD;
+            } else if (nbAlive === 3) {
+              tampon[k][l] = CELL_STATES.ALIVE;
+            }
+          }
+        }
+
+        this.state = tampon;
 
         this.updated();
         this.run(currentTime);
@@ -48,7 +66,9 @@ export class Model {
   }
 
   reset() {
-    // TODO
+    this.stop();
+    this.init();
+    this.updated();
   }
 
   isCellAlive(x, y) {
@@ -62,11 +82,50 @@ export class Model {
   }
   aliveNeighbours(x, y) {
     let number = 0;
-    // TODO
+    if (x > 0) {
+      if (this.state[x - 1][y] === CELL_STATES.ALIVE) {
+        number++;
+      }
+      if (y > 0) {
+        if (this.state[x - 1][y - 1] === CELL_STATES.ALIVE) {
+          number++;
+        }
+      }
+      if (y < this.width - 1) {
+        if (this.state[x - 1][y + 1] === CELL_STATES.ALIVE) {
+          number++;
+        }
+      }
+    }
+    if (x < this.width - 1) {
+      if (this.state[x + 1][y] === CELL_STATES.ALIVE) {
+        number++;
+      }
+      if (y > 0) {
+        if (this.state[x + 1][y - 1] === CELL_STATES.ALIVE) {
+          number++;
+        }
+      }
+      if (y < this.width) {
+        if (this.state[x + 1][y + 1] === CELL_STATES.ALIVE) {
+          number++;
+        }
+      }
+    }
+    if (y > 0) {
+      if (this.state[x][y - 1] === CELL_STATES.ALIVE) {
+        number++;
+      }
+    }
+    if (y < this.width - 1) {
+      if (this.state[x][y + 1] === CELL_STATES.ALIVE) {
+        number++;
+      }
+    }
     return number;
   }
 
   updated() {
-    // TODO update the view
+    drawGame(this);
   }
 }
