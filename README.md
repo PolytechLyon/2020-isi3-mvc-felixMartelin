@@ -42,8 +42,8 @@ En quoi cela relève du design pattern ObserverObservable.
 
 1. Expliquer votre implémentation:
 
-L'usage d'une callback permet ici de `.......` afin dire à la _View_ de se redessiner.
-L'objet _Model_ n'a pas de lien avec `.......` pourtant grâce à la `.......` il peut notifier la `vue`.
+L'usage d'une callback permet ici de `notifier` afin dire à la _View_ de se redessiner.
+L'objet _Model_ n'a pas de lien avec `la vue` pourtant grâce à la `callback` il peut notifier la `vue`.
 
 2. Insérer ici un UML montrant le pattern Observer-Observable liés aux objects de ce TP.
 
