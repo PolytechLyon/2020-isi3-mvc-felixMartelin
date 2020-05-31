@@ -20,7 +20,7 @@ Il est inventé par [John Horton Conway](https://fr.wikipedia.org/wiki/John_Hort
 1. Expliquer le design pattern MVC à l'aide d'un schéma à insérer directement ici.
    Utiliser un outils commde Dia pour le représenter. Je veux **votre** schéma, pas un de ceux qu'on peut trouver sur le net.
 
-![40% center](Sans titre.png)
+![40% center](patternMVC.png)
 2. Expliquer ce pattern à l'aide en complétant ce texte.
 
 Le pattern MVP, vise à découper le `modele`, de la `vue` et du `controller` afin de rendre le code plus `structuré`.
