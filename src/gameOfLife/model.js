@@ -7,10 +7,11 @@ import {
 import { initView, drawGame } from "./view";
 
 export class Model {
-  constructor() {
+  constructor(callback) {
     this.width = GAME_SIZE;
     this.height = GAME_SIZE;
     this.raf = null;
+    this.callback = callback;
   }
 
   init() {
@@ -126,6 +127,6 @@ export class Model {
   }
 
   updated() {
-    drawGame(this);
+    this.callback(this);
   }
 }
