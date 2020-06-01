@@ -25,7 +25,7 @@ Il est inventé par [John Horton Conway](https://fr.wikipedia.org/wiki/John_Hort
 
 Le pattern MVP, vise à découper le `modele`, de la `vue` et du `controller` afin de rendre le code plus `structuré`.
 Les responsabilités ne sont alors plus `partagées`.
-On peut ainsi changer l'aspect visuel de sont application sans pour autant impacter le `back`.
+On peut ainsi changer l'aspect visuel de sont application sans pour autant impacter le `modele`.
 
 3. Expliquer dans quels cas on doit privilégier le pattern MVC.
 
