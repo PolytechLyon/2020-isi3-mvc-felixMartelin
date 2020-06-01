@@ -28,6 +28,7 @@ Les responsabilités ne sont alors plus `partagées`.
 On peut ainsi changer l'aspect visuel de sont application sans pour autant impacter le `modele`.
 
 3. Expliquer dans quels cas on doit privilégier le pattern MVC.
+Le pattern MVC permettant la séparation de la partie graphique du reste de l'application, il est donc très important dans des applications type applications web avec des interfaces graphiques sur lesquelles l'utilisateur va intéragir. 
 
 ## A faire (obligatoire)
 
@@ -47,7 +48,7 @@ L'usage d'une callback permet ici de `notifier` afin dire à la _View_ de se red
 L'objet _Model_ n'a pas de lien avec `la vue` pourtant grâce à la `callback` il peut notifier la `vue`.
 
 2. Insérer ici un UML montrant le pattern Observer-Observable liés aux objects de ce TP.
-
+![40% center](observer.png)
 ## Optionel
 
 > Si vous voulez apprendre d'autres choses
